@@ -14,6 +14,8 @@ import Product from './components/Product';
 import FeaturedProduct from './components/FeaturedProduct';
 import NewProduct from './components/NewProduct';
 import RootLayout from './layouts/RootLayout';
+import CareersLayout from './layouts/CareersLayout';
+import Careers, { careersLoader } from './components/careers/Careers'
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
@@ -26,6 +28,13 @@ const router = createBrowserRouter(
 				<Route index element={<FeaturedProduct/>}/>
 				<Route path="featured" element={<FeaturedProduct/>}/>
 				<Route path="new" element={<NewProduct/>}/>
+			</Route>
+			<Route path="careers" element={<CareersLayout/>}>
+				<Route 
+					index 
+					element={<Careers/>} 
+					loader={careersLoader} 
+				/>
 			</Route>
 			<Route path="*" element={<NotFound/>} />
 		</Route>
