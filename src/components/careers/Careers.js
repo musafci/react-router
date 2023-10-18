@@ -6,8 +6,8 @@ export default function Careers() {
   return (
     <div className="careers">
       {careers.map(career => (
-        <Link to='/' key={career.id}>
-          <p>{career.name} || Based in {career.address.street}</p>
+        <Link to={career.id.toString()} key={career.id}>
+          <p>{career.name} || Address : {career.address.street}</p>
         </Link>
       ))}
     </div>
